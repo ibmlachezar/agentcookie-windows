@@ -62,9 +62,10 @@ WATCH_INTERVAL = int(os.getenv("WATCH_INTERVAL", "30"))  # seconds between check
 
 # Chrome cookie paths on Windows
 CHROME_COOKIE_PATHS = [
+    Path(os.environ.get("LOCALAPPDATA", "")) / "Google" / "Chrome" / "User Data" / "Default" / "Network" / "Cookies",
     Path(os.environ.get("LOCALAPPDATA", "")) / "Google" / "Chrome" / "User Data" / "Default" / "Cookies",
-    Path(os.environ.get("LOCALAPPDATA", "")) / "Google" / "Chrome" / "User Data" / "Profile 1" / "Cookies",
-    # Edge (Chromium-based) - bonus
+    Path(os.environ.get("LOCALAPPDATA", "")) / "Google" / "Chrome" / "User Data" / "Profile 1" / "Network" / "Cookies",
+    Path(os.environ.get("LOCALAPPDATA", "")) / "Microsoft" / "Edge" / "User Data" / "Default" / "Network" / "Cookies",
     Path(os.environ.get("LOCALAPPDATA", "")) / "Microsoft" / "Edge" / "User Data" / "Default" / "Cookies",
 ]
 
